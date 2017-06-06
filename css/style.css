@@ -766,7 +766,10 @@ Parallax
   line-height: 1.3em;
 }
 
-
+ul {
+    text-align: left; !important;
+    font-size: 17px; !important;
+}
 
 
 

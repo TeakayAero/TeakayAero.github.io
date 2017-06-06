@@ -14,9 +14,7 @@ jQuery(function($) {
 			}
 		});
 						
-	});	
-	
-	
+	});
 
 	//Initiat WOW JS
 	new WOW().init();
@@ -39,7 +37,6 @@ jQuery(function($) {
 		});
 	});
 
-
 	//Pretty Photo
 	$("a[rel^='prettyPhoto']").prettyPhoto({
 		social_tools: false
@@ -58,4 +55,108 @@ jQuery(function($) {
 		});
 	
 	
+});
+
+var map = AmCharts.makeChart("mapdiv",{
+	type: "map",
+	theme: "dark",
+	projection: "mercator",
+	panEventsEnabled : true,
+	backgroundColor : "#535364",
+	backgroundAlpha : 1,
+	zoomControl: {
+		zoomControlEnabled : true
+	},
+	dataProvider : {
+		map : "worldHigh",
+		getAreasFromMap : true,
+		areas :
+			[
+				{
+					"id": "AT",
+					"showAsSelected": true
+				},
+				{
+					"id": "BE",
+					"showAsSelected": true
+				},
+				{
+					"id": "CZ",
+					"showAsSelected": true
+				},
+				{
+					"id": "DK",
+					"showAsSelected": true
+				},
+				{
+					"id": "FI",
+					"showAsSelected": true
+				},
+				{
+					"id": "FR",
+					"showAsSelected": true
+				},
+				{
+					"id": "DE",
+					"showAsSelected": true
+				},
+				{
+					"id": "GR",
+					"showAsSelected": true
+				},
+				{
+					"id": "IT",
+					"showAsSelected": true
+				},
+				{
+					"id": "LV",
+					"showAsSelected": true
+				},
+				{
+					"id": "LU",
+					"showAsSelected": true
+				},
+				{
+					"id": "NL",
+					"showAsSelected": true
+				},
+				{
+					"id": "NO",
+					"showAsSelected": true
+				},
+				{
+					"id": "ES",
+					"showAsSelected": true
+				},
+				{
+					"id": "SE",
+					"showAsSelected": true
+				},
+				{
+					"id": "CA",
+					"showAsSelected": true
+				},
+				{
+					"id": "US",
+					"showAsSelected": true
+				},
+				{
+					"id": "CN",
+					"showAsSelected": true
+				},
+				{
+					"id": "JP",
+					"showAsSelected": true
+				}
+			]
+	},
+	areasSettings : {
+		autoZoom : true,
+		color : "#B4B4B7",
+		colorSolid : "#84ADE9",
+		selectedColor : "#84ADE9",
+		outlineColor : "#666666",
+		rollOverColor : "#9EC2F7",
+		rollOverOutlineColor : "#000000"
+	}
 });
