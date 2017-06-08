@@ -40,6 +40,9 @@
                 <a class="navbar-brand" href="index.html">
                     <h1>Escher</h1>
                 </a>
+                <div class="navbar-brand" style="padding-top:13px">
+                    <img id="playButton" src="./img/playstop.png">
+                </div>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -80,6 +83,21 @@
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="wow bounceInDown" data-wow-delay="0.4s">
                             <div class="section-heading">
+                               <h4>Welcome to my site, play the background music if you want <br><br>
+                               </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="heading-about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="wow bounceInDown" data-wow-delay="0.4s">
+                            <div class="section-heading">
                                 <h2>About myself</h2>
                                 <i class="fa fa-2x fa-angle-down"></i>
                             </div>
@@ -94,7 +112,8 @@
                 <div class="wow bounceInUp" data-wow-delay="0.2s">
                     <div class="col-sm-12">
                         <h4 class="soon">
-                            I'm interested in <br><br>
+                            An ordinary 3rd year Computer Science student at the University of Waterloo who interested in
+                            <br><br>
                             <font color="red" >Machine Learning</font>,
                             <font color="blue">Artificial Intelligence</font> and
                             <font color="purple">Physics</font><br><br>
@@ -194,7 +213,6 @@
                 <div class="wow bounceInUp" data-wow-delay="0.2s">
                     <div class="col-sm-12">
                         <h4 class="soon">
-                            An ordinary 3rd year Computer Science student at the University of Waterloo<br><br>
                             "Don't Listen to what they say.
                             <font color="#00ffff"> GO SEE!</font>"
                         </h4>
@@ -384,6 +402,13 @@
         </div>
     </footer>
     </div>
+    <!-- hidden -->
+    <div style="display:none">
+        <audio id="player" controls>
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
     <!-- Core JavaScript Files -->
     <script src="./js/ammap.js"></script>
     <script src="./js/worldHigh.js"></script>
@@ -401,6 +426,41 @@
     <script src="js/jquery.prettyPhoto.js"></script>
     <script src="js/jquery.isotope.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        window.onload = function() {
+            var songList = [
+                './src/nin_AsuNoYozoraShoukaihan.mp3',
+                './src/depapepe_KittoMataItsuka.mp3',
+                './src/vk_PaperPlanesAdventure.m4a'
+            ];
+            var backgroundAudio = document.getElementById("player");
+            backgroundAudio.volume = 0.2;
+            shuffle(songList);
+            backgroundAudio.src = songList[0];
+            backgroundAudio.load();
+        }
+
+        $('#playButton').click(function() {
+            var backgroundAudio = document.getElementById("player");
+            if(backgroundAudio.paused) backgroundAudio.play();
+            else backgroundAudio.pause();
+        })
+
+        function shuffle(array) { // grab from sof
+            var currentIndex = array.length, temporaryValue, randomIndex;
+            while (0 !== currentIndex) {
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex -= 1;
+                temporaryValue = array[currentIndex];
+                array[currentIndex] = array[randomIndex];
+                array[randomIndex] = temporaryValue;
+            }
+
+            return array;
+        }
+
+
+    </script>
 
 </body>
 

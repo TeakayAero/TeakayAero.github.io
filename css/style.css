@@ -428,12 +428,18 @@ hr {
 
 
 /* ===========================
---- Services
+--- Music
 ============================ */
 
 .service-icon {
 	margin-bottom: 20px;
-}	
+}
+
+#playButton {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
 
 
 
