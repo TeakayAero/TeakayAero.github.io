@@ -778,7 +778,9 @@ ul {
 }
 
 
-
+.finish {
+    text-decoration: line-through;
+}
 
 
 /* separator*/
