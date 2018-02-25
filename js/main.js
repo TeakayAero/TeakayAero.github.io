@@ -117,6 +117,10 @@ var map = AmCharts.makeChart("mapdiv",{
 					"showAsSelected": true
 				},
 				{
+					"id": "MX",
+					"showAsSelected": true
+				},
+				{
 					"id": "NL",
 					"showAsSelected": true
 				},
